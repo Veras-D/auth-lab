@@ -34,11 +34,13 @@ export const login = async (req, res) => {
   }
 };
 
-export const getUser = async (req, res) => {
+export const getUsers = async (req, res) => {
   try {
-    const user = await User.findById(req.params.id);
-    if (!user) return res.status(404).json({ error: 'User not found' });
-    res.json(user);
+    const users = await User.find();
+    if (users.length === 0) {
+      return res.status(404).json({ error: 'No users found' });
+    }
+    res.json(users);
   } catch (err) {
     res.status(500).json({ error: 'Server error' });
   }
