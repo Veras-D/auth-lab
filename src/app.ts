@@ -1,8 +1,8 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
-import { connectToDatabase } from './config/database.js';
-import userRoutes from './routes/user.routes.js';
+import { connectToDatabase } from './config/database.ts';
+import userRoutes from './routes/user.routes.ts';
 
 const app = express();
 

@@ -1,12 +1,12 @@
 import jwt from 'jsonwebtoken';
-import User from '../models/user.model.js';
-import { env } from '../config/env.js';
+import User from '../models/user.model.ts';
+import { env } from '../config/env.ts';
 
 const generateToken = (user) => {
   return jwt.sign({ id: user._id }, env.JWT_SECRET, { expiresIn: '1h' });
 };
 
-export const register = async (req, res) => {
+export const register = async (req: Request, res: Response) => {
   const { username, email, password } = req.body;
   try {
     const existing = await User.findOne({ email });
@@ -20,7 +20,7 @@ export const register = async (req, res) => {
   }
 };
 
-export const login = async (req, res) => {
+export const login = async (req: Request, res: Response) => {
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email });
@@ -34,7 +34,7 @@ export const login = async (req, res) => {
   }
 };
 
-export const getUsers = async (req, res) => {
+export const getUsers = async (req: Request, res: Response) => {
   try {
     const users = await User.find();
     if (users.length === 0) {
@@ -46,7 +46,7 @@ export const getUsers = async (req, res) => {
   }
 };
 
-export const updateUser = async (req, res) => {
+export const updateUser = async (req: Request, res: Response) => {
   try {
     const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!user) return res.status(404).json({ error: 'User not found' });
@@ -56,7 +56,7 @@ export const updateUser = async (req, res) => {
   }
 };
 
-export const deleteUser = async (req, res) => {
+export const deleteUser = async (req: Request, res: Response) => {
   try {
     const user = await User.findByIdAndDelete(req.params.id);
     if (!user) return res.status(404).json({ error: 'User not found' });
