@@ -1,8 +1,8 @@
 import express, { Request, Response } from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
-import { connectToDatabase } from './config/database.ts';
-import userRoutes from './routes/user.routes.ts';
+import { connectToDatabase } from './config/database';
+import userRoutes from './routes/user.routes';
 import authRoutes from './routes/auth.routes';
 
 const app = express();

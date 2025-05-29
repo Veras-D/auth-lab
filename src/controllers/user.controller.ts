@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
-import User from '../models/user.model.ts';
-import { env } from '../config/env.ts';
+import User from '../models/user.model';
+import { env } from '../config/env';
 
 const generateToken = (user) => {
   return jwt.sign({ id: user._id }, env.JWT_SECRET, { expiresIn: '1h' });
