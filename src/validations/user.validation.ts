@@ -18,5 +18,5 @@ export const updateUserSchema = Joi.object({
 }).min(1);
 
 export const userIdParam = Joi.object({
-  id: Joi.string().hex().length(24).required(),
+  id: Joi.string().pattern(/^[0-9a-fA-F]{24}$/).required(),
 });
