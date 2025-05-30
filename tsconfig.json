@@ -4,14 +4,15 @@
     "module": "ES2022",
     "moduleResolution": "node",
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": "./",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "types": ["jest"]
+    "types": ["jest"],
+    "typeRoots": ["./node_modules/@types", "./src/types"]
   },
-  "include": ["src", "tests"],
-  "exclude": ["node_modules"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "tests"]
 }

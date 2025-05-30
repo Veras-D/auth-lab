@@ -4,5 +4,13 @@ export default {
   extensionsToTreatAsEsm: ['.ts'],
   moduleFileExtensions: ['ts', 'js', 'json'],
   testMatch: ['**/tests/**/*.test.ts'],
-  transform: {},
+  transform: {
+    '^.+\\.ts$': ['ts-jest', { useESM: true }]
+  },
+  globals: {
+    'ts-jest': {
+      useESM: true,
+      tsconfig: './tsconfig.test.json'
+    }
+  }
 };
