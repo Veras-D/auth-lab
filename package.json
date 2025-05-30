@@ -5,8 +5,8 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "lint": "eslint . --ext .js,.mjs",
-    "test": "tsc --noEmit --project tsconfig.test.json && jest",
-    "test:watch": "jest --watchAll"
+    "test": "NODE_ENV=test tsc --noEmit --project tsconfig.test.json && jest",
+    "test:watch": "NODE_ENV=test jest --watchAll"
   },
   "engines": {
     "node": ">=20"
