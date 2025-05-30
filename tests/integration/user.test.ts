@@ -1,5 +1,6 @@
 import request from 'supertest';
 import app from '../../src/app';
+import '../setup'
 
 describe('User Endpoints', () => {
   let createdUserId: string;
