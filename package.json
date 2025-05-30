@@ -6,7 +6,11 @@
     "start": "node dist/index.js",
     "lint": "eslint . --ext .js,.mjs",
     "test": "NODE_ENV=test tsc --noEmit --project tsconfig.test.json && jest",
-    "test:watch": "NODE_ENV=test jest --watchAll"
+    "test:unit": "NODE_ENV=test jest tests/unit",
+    "test:integration": "NODE_ENV=test jest tests/integration",
+    "test:watch": "NODE_ENV=test jest --watch",
+    "test:coverage": "NODE_ENV=test jest --coverage",
+    "test:ci": "NODE_ENV=test jest --ci --coverage --watchAll=false"
   },
   "engines": {
     "node": ">=20"
