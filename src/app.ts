@@ -4,9 +4,9 @@ import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 import path from 'path';
-import { connectToDatabase } from './config/database';
-import userRoutes from './routes/user.routes';
-import authRoutes from './routes/auth.routes';
+import { connectToDatabase } from './config/database.js';
+import userRoutes from './routes/user.routes.js';
+import authRoutes from './routes/auth.routes.js';
 
 const app = express();
 
