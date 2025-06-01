@@ -1,26 +1,24 @@
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 
 WORKDIR /app
-
-COPY package*.json ./
-RUN npm ci --only=production && npm cache clean --force
-
 COPY . .
-RUN npm run build
 
-FROM node:18-alpine AS production
+RUN chmod +x scripts/adjust-package.sh && ./scripts/adjust-package.sh
+
+RUN npm ci
+RUN npm run build:esbuild
+
+FROM node:20-alpine AS production
 
 WORKDIR /app
 
-RUN addgroup -g 1001 -S nodejs && \
-    adduser -S nodejs -u 1001
-
-COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/.env ./
 
-USER nodejs
+RUN npm ci --omit=dev
 
+ENV NODE_ENV=production
 EXPOSE 3000
 
-CMD ["node", "dist/src/index.js"]
+CMD ["node", "dist/index.js"]
