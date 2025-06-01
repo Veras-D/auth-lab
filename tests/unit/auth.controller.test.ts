@@ -1,12 +1,12 @@
 import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { profile, logout, refreshToken } from '../../src/controllers/auth.controller';
-import User from '../../src/models/user.model';
-import { env } from '../../src/config/env';
+import { profile, logout, refreshToken } from '../../src/controllers/auth.controller.js';
+import User from '../../src/models/user.model.js';
+import { env } from '../../src/config/env.js';
 
-jest.mock('../../src/models/user.model');
+jest.mock('../../src/models/user.model.js');
 jest.mock('jsonwebtoken');
-jest.mock('../../src/config/env', () => ({
+jest.mock('../../src/config/env.js', () => ({
   env: {
     JWT_SECRET: 'test-secret'
   }

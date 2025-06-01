@@ -1,12 +1,12 @@
 import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { register, login, getUsers, updateUser, deleteUser } from '../../src/controllers/user.controller';
-import User from '../../src/models/user.model';
-import { env } from '../../src/config/env';
+import { register, login, getUsers, updateUser, deleteUser } from '../../src/controllers/user.controller.js';
+import User from '../../src/models/user.model.js';
+import { env } from '../../src/config/env.js';
 
-jest.mock('../../src/models/user.model');
+jest.mock('../../src/models/user.model.js');
 jest.mock('jsonwebtoken');
-jest.mock('../../src/config/env', () => ({
+jest.mock('../../src/config/env.js', () => ({
   env: {
     JWT_SECRET: 'test-secret'
   }

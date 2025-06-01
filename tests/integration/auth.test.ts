@@ -1,6 +1,6 @@
 import request from 'supertest';
-import app from '../../src/app';
-import '../setup'
+import app from '../../src/app.js';
+import '../setup.js'
 
 describe('Auth Endpoints', () => {
   let accessToken: string;

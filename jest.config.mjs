@@ -9,5 +9,9 @@ export default {
       useESM: true,
       tsconfig: './tsconfig.test.json'
     }]
-  }
+  },
+  moduleNameMapper: {
+    '^(\\@/.*)\\.js$': '<rootDir>/src/$1.ts',
+    '^(\\.{1,2}/.*)\\.js$': '$1'
+  },
 };
