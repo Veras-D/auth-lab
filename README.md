@@ -85,7 +85,7 @@ veras-auth-api/
 
 ```bash
 git clone https://github.com/Veras-D/auth-api.git
-cd veras-auth-api
+cd auth-api
 npm install
 ```
 

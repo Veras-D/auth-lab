@@ -7,6 +7,7 @@ import path from 'path';
 import { connectToDatabase } from './config/database.js';
 import userRoutes from './routes/user.routes.js';
 import authRoutes from './routes/auth.routes.js';
+import { limiter } from './middlewares/rateLimiter.middleware.js';
 
 const app = express();
 
@@ -15,6 +16,7 @@ connectToDatabase();
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
+app.use(limiter);
 
 const swaggerDocument = YAML.load(path.join('src', 'docs', 'openapi.yaml'));
 
