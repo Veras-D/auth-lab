@@ -17,6 +17,9 @@ COPY --from=builder /app/package.json ./
 COPY --from=builder /app/package-lock.json ./
 COPY --from=builder /app/.env ./
 
+RUN mkdir -p ./src/docs
+COPY --from=builder /app/src/docs/openapi.yaml ./src/docs/openapi.yaml
+
 RUN npm ci --omit=dev
 
 ENV NODE_ENV=production
