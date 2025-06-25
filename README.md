@@ -3,7 +3,7 @@
 </div>
 
 
-# Auth API
+# AuthLab API
 
 [![Node.js](https://img.shields.io/badge/Node.js-20%2B-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -17,7 +17,7 @@
 
 ## 🔐 Overview
 
-**Auth API** is a robust authentication service built with Node.js, TypeScript, and Express. It provides secure user registration, login, and JWT-based authentication with comprehensive testing and Docker support.
+**AuthLab API** is a robust authentication service built with Node.js, TypeScript, and Express. It provides secure user registration, login, and JWT-based authentication with comprehensive testing and Docker support.
 
 ---
 
@@ -38,7 +38,7 @@
 ## 🏗️ Project Structure
 
 ```bash
-veras-auth-api/
+auth-lab/
 ├── src/
 │   ├── app.ts                 # Express app configuration
 │   ├── index.ts               # Application entry point
@@ -84,8 +84,8 @@ veras-auth-api/
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/Veras-D/auth-api.git
-cd auth-api
+git clone https://github.com/Veras-D/auth-lab.git
+cd auth-lab
 npm install
 ```
 
