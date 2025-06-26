@@ -16,7 +16,10 @@ export default {
       cluster,
       image: "Dockerfile",
       loadBalancer: {
-        ports: [{ listen: "80/http", forward: "3000/http" }],
+        rules: [
+          { listen: "80/http" },
+          { listen: "3000/http", forward: "80/http" }
+        ],
       },
       dev: {
         command: "npm run dev",
