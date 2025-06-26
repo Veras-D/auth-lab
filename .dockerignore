@@ -11,3 +11,7 @@ tests
 jest.config.mjs
 tsconfig.test.json
 .github
+
+
+# sst
+.sst
