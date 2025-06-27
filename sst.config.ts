@@ -20,6 +20,10 @@ export default {
           { listen: "80/http" },
           { listen: "3000/http", forward: "80/http" }
         ],
+        healthCheck: {
+          port: 3000,
+          path: "/",
+        },
       },
       dev: {
         command: "npm run dev",
