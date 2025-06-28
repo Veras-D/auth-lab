@@ -32,6 +32,7 @@
 - 🧪 Comprehensive testing (unit & integration)
 - 🐳 Docker containerization
 - 🔄 CI/CD ready
+- ☁️ SST for ECS deploy in AWS
 
 ---
 
