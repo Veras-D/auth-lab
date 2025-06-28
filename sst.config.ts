@@ -2,17 +2,17 @@
 
 export default {
   app: (input) => ({
-    name: "auth-lab",
+    name: "auth-labV2",
     removal: input.stage === "production" ? "retain" : "remove",
     protect: input.stage === "production",
     home: "aws",
   }),
 
   async run() {
-    const vpc = new sst.aws.Vpc("AuthVpc");
-    const cluster = new sst.aws.Cluster("AuthCluster", { vpc });
+    const vpc = new sst.aws.Vpc("AuthApiVpc");
+    const cluster = new sst.aws.Cluster("AuthApiCluster", { vpc });
 
-    new sst.aws.Service("AuthService", {
+    new sst.aws.Service("AuthApiService", {
       cluster,
       image: "Dockerfile",
       loadBalancer: {

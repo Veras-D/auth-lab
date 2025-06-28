@@ -5,12 +5,12 @@
 
 declare module "sst" {
   export interface Resource {
-    "AuthService": {
+    "AuthApiService": {
       "service": string
       "type": "sst.aws.Service"
       "url": string
     }
-    "AuthVpc": {
+    "AuthApiVpc": {
       "type": "sst.aws.Vpc"
     }
   }
